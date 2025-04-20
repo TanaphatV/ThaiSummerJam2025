@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct ScrollingObjectSetInfo
+{
+    public int weight;
+    public ScrollingObjectSet objectSet;
+}
+
 public class ScrollingObjectManager : MonoBehaviour
 {
     [SerializeField] Transform spawnPoint;
@@ -9,7 +16,9 @@ public class ScrollingObjectManager : MonoBehaviour
 
     public float speed;
 
-    public List<ScrollingObjectSet> obstacleList;
+    public List<ScrollingObjectSetInfo> objectSetInfoList;
+
+    private List<ScrollingObjectSet> objectSetList;
 
     private List<ScrollingObjectSet> activeObstacleList = new();
 
@@ -33,6 +42,19 @@ public class ScrollingObjectManager : MonoBehaviour
         }
 
         CheckObjectSet();
+    }
+
+    public void Init()
+    {
+        objectSetList = new();
+
+        foreach (var info in objectSetInfoList)
+        {
+            for(int i = 0; i < info.weight; i++)
+            {
+                objectSetList.Add(info.objectSet);
+            }
+        }
     }
 
     public void StartSpawner()
@@ -71,7 +93,7 @@ public class ScrollingObjectManager : MonoBehaviour
 
     void PreInitNextSet()
     {
-        upcomingSet = obstacleList[Random.Range(0, obstacleList.Count)];
+        upcomingSet = objectSetList[Random.Range(0, objectSetList.Count)];
     }
 
 }
