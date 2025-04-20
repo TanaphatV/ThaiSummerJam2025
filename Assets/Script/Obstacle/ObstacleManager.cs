@@ -8,26 +8,40 @@ public class ObstacleManager : MonoBehaviour
     [SerializeField] Transform deSpawnPoint;
 
     public float speed;
-    public float spawnInterval;
 
     public List<ObstacleSet> obstacleList;
 
     private List<ObstacleSet> activeObstacleList = new();
 
-    float timer;
+    private ObstacleSet lastSpawnedSet;
+    private ObstacleSet upcomingSet;
 
+    public bool start;
+
+    private void Start()
+    {
+        StartSpawner();
+    }
     private void Update()
     {
-        timer += Time.deltaTime;
+        if (!start)
+            return;
 
-        if (timer > spawnInterval)
+        if (lastSpawnedSet.transform.position.z < (spawnPoint.position.z - upcomingSet.length))
         {
-            timer = 0;
             SpawnObstacle();
         }
 
         CheckObstacle();
     }
+
+    public void StartSpawner()
+    {
+        start = true;
+        PreInitNextSet();
+        SpawnObstacle();
+    }
+
 
     void CheckObstacle()
     {
@@ -47,11 +61,17 @@ public class ObstacleManager : MonoBehaviour
 
     void SpawnObstacle()
     {
-        ObstacleSet set = Instantiate(obstacleList[Random.Range(0,obstacleList.Count)]);
+        ObstacleSet set = Instantiate(upcomingSet);
         set.transform.position = spawnPoint.position;
         set.Init(speed);
-
+        lastSpawnedSet = set;
         activeObstacleList.Add(set);
+        PreInitNextSet();
+    }
+
+    void PreInitNextSet()
+    {
+        upcomingSet = obstacleList[Random.Range(0, obstacleList.Count)];
     }
 
 }
