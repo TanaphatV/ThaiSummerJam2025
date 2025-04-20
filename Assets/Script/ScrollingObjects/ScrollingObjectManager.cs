@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleManager : MonoBehaviour
+public class ScrollingObjectManager : MonoBehaviour
 {
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform deSpawnPoint;
 
     public float speed;
 
-    public List<ObstacleSet> obstacleList;
+    public List<ScrollingObjectSet> obstacleList;
 
-    private List<ObstacleSet> activeObstacleList = new();
+    private List<ScrollingObjectSet> activeObstacleList = new();
 
-    private ObstacleSet lastSpawnedSet;
-    private ObstacleSet upcomingSet;
+    private ScrollingObjectSet lastSpawnedSet;
+    private ScrollingObjectSet upcomingSet;
 
     public bool start;
 
@@ -29,21 +29,21 @@ public class ObstacleManager : MonoBehaviour
 
         if (lastSpawnedSet.transform.position.z < (spawnPoint.position.z - upcomingSet.length))
         {
-            SpawnObstacle();
+            SpawnObjectSet();
         }
 
-        CheckObstacle();
+        CheckObjectSet();
     }
 
     public void StartSpawner()
     {
         start = true;
         PreInitNextSet();
-        SpawnObstacle();
+        SpawnObjectSet();
     }
 
 
-    void CheckObstacle()
+    void CheckObjectSet()
     {
         int count = activeObstacleList.Count;
         for (int i = 0; i < count; i++)
@@ -59,9 +59,9 @@ public class ObstacleManager : MonoBehaviour
         }
     }
 
-    void SpawnObstacle()
+    void SpawnObjectSet()
     {
-        ObstacleSet set = Instantiate(upcomingSet);
+        ScrollingObjectSet set = Instantiate(upcomingSet);
         set.transform.position = spawnPoint.position;
         set.Init(speed);
         lastSpawnedSet = set;

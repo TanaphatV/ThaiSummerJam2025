@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
-public class RandomSpotObstacle : Obstacle
+public class RandomSpotObject : ScrollingObject
 {
     public Transform obstacleTF;
     public Vector2 spawnZoneSize;
@@ -16,6 +17,8 @@ public class RandomSpotObstacle : Obstacle
             transform.position.z + Random.Range(-halfSize.y, halfSize.y)
             );
         obstacleTF.position = randomSpot;
+       
+      
     }
 
     private void OnDrawGizmos()

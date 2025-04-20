@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : ScrollingObject
 {
-    public virtual void Init()
-    {
 
-    }
 }

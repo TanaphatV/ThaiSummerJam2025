@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleSet : MonoBehaviour
+public class ScrollingObjectSet : MonoBehaviour
 {
     public float length;
     public bool isActive { get; private set; }
 
-    List<Obstacle> obstacle;
+    List<ScrollingObject> obstacle;
     float speed;
 
    public void Init(float speed)
     {
-        obstacle = new(GetComponentsInChildren<Obstacle>());
+        obstacle = new(GetComponentsInChildren<ScrollingObject>());
         this.speed = speed;
         foreach (var obs in obstacle)
             obs.Init();
