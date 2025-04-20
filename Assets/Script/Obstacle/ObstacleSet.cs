@@ -14,6 +14,8 @@ public class ObstacleSet : MonoBehaviour
     {
         obstacle = new(GetComponentsInChildren<Obstacle>());
         this.speed = speed;
+        foreach (var obs in obstacle)
+            obs.Init();
     }
 
     public void OnSpawn()
