@@ -9,4 +9,10 @@ public class MainMenuFunctions : MonoBehaviour
         Debug.Log("Play Game button clicked");
         // Load the game scene here
     }
+
+    public void ThailandGameJamURL()
+    {
+        Debug.Log("Thailand Game Jam URL button clicked");
+        Application.OpenURL("https://itch.io/jam/thailand-summer-jam-2025");
+    }
 }
