@@ -7,8 +7,12 @@ public class FPSController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    [Header("Horizontal")]
     [SerializeField] private float minX;
     [SerializeField] private float maxX;
+    [Header("Vertical")]
+    [SerializeField] private float minZ;
+    [SerializeField] private float maxZ;
 
     public Transform orientation;
 
@@ -44,6 +48,7 @@ public class FPSController : MonoBehaviour
         Vector3 clampedPosition = rb.position;
 
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, minZ, maxZ);
 
         rb.position = clampedPosition;
     }
@@ -51,7 +56,7 @@ public class FPSController : MonoBehaviour
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        //verticalInput = Input.GetAxisRaw("Vertical");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }

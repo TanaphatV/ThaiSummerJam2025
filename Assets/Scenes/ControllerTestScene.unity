@@ -785,6 +785,8 @@ MonoBehaviour:
   moveSpeed: 1
   minX: -1
   maxX: 1
+  minZ: -8
+  maxZ: -6
   orientation: {fileID: 2065790497}
   camPos: {fileID: 0}
 --- !u!54 &2015765350
@@ -812,7 +814,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!1 &2063825230
 GameObject:
