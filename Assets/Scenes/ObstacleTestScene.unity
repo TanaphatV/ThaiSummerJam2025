@@ -548,7 +548,7 @@ MonoBehaviour:
   speed: 2.86
   objectSetInfoList:
   - weight: 1
-    objectSet: {fileID: 8679161452832312577, guid: 01f036ac0cc106e45b2c6f757a1a440d, type: 3}
+    objectSet: {fileID: 6201757538121389742, guid: 30e29fc2c9854404eb07f71fc708a29d, type: 3}
   start: 0
 --- !u!4 &1503491258
 Transform:

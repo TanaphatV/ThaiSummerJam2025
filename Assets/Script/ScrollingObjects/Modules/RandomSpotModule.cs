@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class RandomSpotObject : ScrollingObject
+public class RandomSpotModule : ScrollingObjectModule
 {
-    public Transform obstacleTF;
     public Vector2 spawnZoneSize;
 
-    public override void Init()
+    private Transform objectTF;
+
+    public override void Init(ScrollingObject scrollingObject)
     {
+        base.Init(scrollingObject);
+        objectTF = scrollingObject.transform;
+
         Vector2 halfSize = spawnZoneSize / 2.0f;
         Vector3 randomSpot = new Vector3(
             transform.position.x + Random.Range(-halfSize.x,halfSize.x),
-            obstacleTF.position.y,
+            objectTF.position.y,
             transform.position.z + Random.Range(-halfSize.y, halfSize.y)
             );
-        obstacleTF.position = randomSpot;
+        objectTF.position = randomSpot;
        
       
     }
