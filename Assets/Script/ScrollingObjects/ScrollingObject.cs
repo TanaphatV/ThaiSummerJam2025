@@ -14,8 +14,16 @@ public class ScrollingObject : MonoBehaviour
 
     }
 
-    public virtual void OnHitPlayer()
+    public virtual void OnHitPlayer(/*PlayerController player*/)
     {
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if(other.TryGetComponent(out PlayerController player))
+        //{
+        //    OnHitPlayer(player);
+        //}
     }
 }

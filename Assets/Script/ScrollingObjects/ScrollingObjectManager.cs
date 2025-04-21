@@ -29,6 +29,7 @@ public class ScrollingObjectManager : MonoBehaviour
 
     private void Start()
     {
+        Init();
         StartSpawner();
     }
     private void Update()
