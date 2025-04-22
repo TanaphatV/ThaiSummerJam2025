@@ -49,7 +49,7 @@ public class ScrollVisualManager : MonoBehaviour
 
     private void Start()
     {
-        Shader.SetGlobalFloat(shaderID_backCurve, 0);
+        Shader.SetGlobalFloat(shaderID_backCurve, backCurveMagnitude * curveMultiplier);
         Shader.SetGlobalFloat(shaderID_sideCurve, 0);
     }
 
