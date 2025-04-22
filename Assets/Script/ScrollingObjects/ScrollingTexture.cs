@@ -23,6 +23,6 @@ public class ScrollingTexture : MonoBehaviour
     {
         _currentX += _speedX * Time.deltaTime;
         _currentY += _speedY * Time.deltaTime;
-        _renderer.material.SetTextureOffset("_BaseMap", new Vector2(_currentX, _currentY));
+        Shader.SetGlobalVector("_Offset", new Vector4(_currentX, _currentY, 0, 0));
     }
 }

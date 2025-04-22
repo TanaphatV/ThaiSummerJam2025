@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 181790850}
   - component: {fileID: 181790849}
   - component: {fileID: 181790848}
-  - component: {fileID: 181790847}
   m_Layer: 0
   m_Name: Plane_Ground
   m_TagString: Untagged
@@ -143,20 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &181790847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181790846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5815dd7df199e174cad0d052e3d122f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedX: 0
-  _speedY: 0.1
 --- !u!64 &181790848
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -256,7 +241,6 @@ GameObject:
   - component: {fileID: 1053397260}
   - component: {fileID: 1053397259}
   - component: {fileID: 1053397258}
-  - component: {fileID: 1053397262}
   m_Layer: 0
   m_Name: Plane_Road
   m_TagString: Untagged
@@ -351,20 +335,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1053397262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053397257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5815dd7df199e174cad0d052e3d122f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedX: 0
-  _speedY: 0.1
 --- !u!1 &1534657855
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +590,58 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &2024255067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024255069}
+  - component: {fileID: 2024255068}
+  m_Layer: 0
+  m_Name: CurveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2024255068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024255067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68dc54a5e75b7f48b44493393f81551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 1.18
+  curveChangeSpeed: 0.01
+  minSideCurve: 0.005
+  maxSideCurve: 0.02
+  backCurveMagnitude: 0
+  chanceToCurve: 0.352
+  minCurveDuration: 1
+  maxCurveDuration: 4
+--- !u!4 &2024255069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024255067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0972643, y: 0.0027016401, z: -1.9816272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2055921605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -668,6 +690,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a70b396c33abffa4e8b704c04ec7eec0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44f494655d7b6d34a92661f97d99ba85, type: 2}
     - target: {fileID: 919132149155446097, guid: a70b396c33abffa4e8b704c04ec7eec0, type: 3}
       propertyPath: m_Name
       value: Mesh_mocai_blocking
@@ -745,6 +771,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8f80414ab3f417b43b64d70416b7f7ad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44f494655d7b6d34a92661f97d99ba85, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f80414ab3f417b43b64d70416b7f7ad, type: 3}
       propertyPath: m_Name
       value: Character_Block
@@ -768,3 +798,4 @@ SceneRoots:
   - {fileID: 1053397261}
   - {fileID: 181790851}
   - {fileID: 2055921605}
+  - {fileID: 2024255069}
