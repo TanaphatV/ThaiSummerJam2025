@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEditor;
 
 public class ScrollVisualManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ScrollVisualManager : MonoBehaviour
     public float minSideCurve;
     public float maxSideCurve;
     public float backCurveMagnitude;
+
+    public bool previewCurveInEditMode;
 
     [Range(0, 1.0f)] public float chanceToCurve;
 
@@ -25,10 +28,23 @@ public class ScrollVisualManager : MonoBehaviour
 
     bool isCurving = false;
 
+    const float curveMultiplier = 0.001f;
+
     private void OnValidate()
     {
-        Shader.SetGlobalFloat(shaderID_backCurve,backCurveMagnitude);
-        Shader.SetGlobalFloat(shaderID_sideCurve, maxSideCurve);
+        if(!EditorApplication.isPlaying)
+        {
+            if(previewCurveInEditMode)
+            {
+                Shader.SetGlobalFloat(shaderID_backCurve, backCurveMagnitude * curveMultiplier);
+                Shader.SetGlobalFloat(shaderID_sideCurve, maxSideCurve * curveMultiplier);
+            }
+            else
+            {
+                Shader.SetGlobalFloat(shaderID_backCurve, 0);
+                Shader.SetGlobalFloat(shaderID_sideCurve, 0);
+            }
+        }
     }
 
     private void Update()
@@ -43,7 +59,7 @@ public class ScrollVisualManager : MonoBehaviour
             else
             {
                 float curveModifier = Random.Range(0, 2) == 0 ? -1:1;
-                SetTargetCurveMagnitude(Random.Range(minSideCurve * curveModifier, maxSideCurve * curveModifier));
+                SetTargetCurveMagnitude(Random.Range(minSideCurve * curveMultiplier * curveModifier, maxSideCurve * curveMultiplier * curveModifier));
             }
         }
     }
@@ -60,7 +76,7 @@ public class ScrollVisualManager : MonoBehaviour
         while (!Mathf.Approximately(_currentCurve,targetCurve))
         {
 
-            _currentCurve = Mathf.MoveTowards(_currentCurve, targetCurve, curveChangeSpeed * Time.deltaTime);
+            _currentCurve = Mathf.MoveTowards(_currentCurve, targetCurve, curveChangeSpeed * curveMultiplier * Time.deltaTime);
             yield return new WaitForEndOfFrame();
             Shader.SetGlobalFloat(shaderID_sideCurve, _currentCurve);
         }
