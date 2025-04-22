@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FPSController : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class FPSController : MonoBehaviour
     [Header("Vertical")]
     [SerializeField] private float minZ;
     [SerializeField] private float maxZ;
+
+    [Header("hp")]
+    [SerializeField] private Image fillBar;
+
+    [field : SerializeField] public int Health { get; set; }
+    [field: SerializeField] public int MaxHealth { get; set; }
 
     public Transform orientation;
 
@@ -35,6 +42,7 @@ public class FPSController : MonoBehaviour
     {
         MyInput();
         SpeedControl();
+        fillBar.fillAmount = (float)Health / MaxHealth;
     }
 
     private void FixedUpdate()
@@ -75,6 +83,15 @@ public class FPSController : MonoBehaviour
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Health -= 1;
+        if (other.gameObject.TryGetComponent<ScrollingObject>(out var scrollingObj))
+        {
+            Health -= 1;
         }
     }
 }
