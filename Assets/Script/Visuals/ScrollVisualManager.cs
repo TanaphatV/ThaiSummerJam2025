@@ -11,6 +11,7 @@ public class ScrollVisualManager : MonoBehaviour
     public float minSideCurve;
     public float maxSideCurve;
     public float backCurveMagnitude;
+    public float floorStretchMagnitude;
 
     public bool previewCurveInEditMode;
 
@@ -22,6 +23,7 @@ public class ScrollVisualManager : MonoBehaviour
     private readonly int shaderID_scrollOffset = Shader.PropertyToID(ShaderVariable.SCROLL_OFFSET);
     private readonly int shaderID_sideCurve = Shader.PropertyToID(ShaderVariable.CURVE_SIDE);
     private readonly int shaderID_backCurve = Shader.PropertyToID(ShaderVariable.CURVE_BACK);
+    private readonly int shaderID_floorStretch = Shader.PropertyToID(ShaderVariable.CURVE_FLOOR);
 
     float  _currentY = 0;
     float _currentCurve = 0;
@@ -38,11 +40,14 @@ public class ScrollVisualManager : MonoBehaviour
             {
                 Shader.SetGlobalFloat(shaderID_backCurve, backCurveMagnitude * curveMultiplier);
                 Shader.SetGlobalFloat(shaderID_sideCurve, maxSideCurve * curveMultiplier);
+                Shader.SetGlobalFloat(shaderID_floorStretch, floorStretchMagnitude * curveMultiplier);
             }
             else
             {
                 Shader.SetGlobalFloat(shaderID_backCurve, 0);
                 Shader.SetGlobalFloat(shaderID_sideCurve, 0);
+                Shader.SetGlobalFloat(shaderID_floorStretch, 0);
+                
             }
         }
     }
@@ -51,6 +56,7 @@ public class ScrollVisualManager : MonoBehaviour
     {
         Shader.SetGlobalFloat(shaderID_backCurve, backCurveMagnitude * curveMultiplier);
         Shader.SetGlobalFloat(shaderID_sideCurve, 0);
+        Shader.SetGlobalFloat(shaderID_floorStretch, floorStretchMagnitude * curveMultiplier);
     }
 
     private void Update()
@@ -107,4 +113,5 @@ public class ShaderVariable
     public const string SCROLL_OFFSET = "_ScrollOffset";
     public const string CURVE_SIDE = "_SideCurveMagnitude";
     public const string CURVE_BACK = "_BackCurveMagnitude";
+    public const string CURVE_FLOOR = "_FloorCurveMagnitude";
 }
