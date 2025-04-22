@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9023965934218680002}
   - component: {fileID: 25590579520428087}
+  - component: {fileID: 313289114729100808}
   - component: {fileID: 4069802773745154884}
   - component: {fileID: 5988398894584285055}
   m_Layer: 0
@@ -275,6 +276,21 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 10
   orientation: {fileID: 3461987602228629183}
   camPos: {fileID: 0}
+--- !u!114 &313289114729100808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3850143216999907419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71def4c62126e9b4db8024d97f643ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  player: {fileID: 3936736779002074163}
+  rayLength: 100
 --- !u!54 &4069802773745154884
 Rigidbody:
   m_ObjectHideFlags: 0
