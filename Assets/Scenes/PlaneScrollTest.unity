@@ -223,8 +223,8 @@ Transform:
   m_GameObject: {fileID: 181790846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -25.8386, y: -0.001, z: 171.0579}
-  m_LocalScale: {x: 70, y: 1, z: 38.2104}
+  m_LocalPosition: {x: 0, y: -0.001, z: 65.684}
+  m_LocalScale: {x: 59.3, y: 1, z: 17.137365}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -329,8 +329,8 @@ Transform:
   m_GameObject: {fileID: 1053397257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.7, z: 171.0585}
-  m_LocalScale: {x: 2, y: 1, z: 38.210106}
+  m_LocalPosition: {x: -0, y: 0.7, z: 65.6843}
+  m_LocalScale: {x: 2, y: 1, z: 17.137232}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -620,14 +620,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 1
-  curveChangeSpeed: 1
-  minSideCurve: 0.06
-  maxSideCurve: 0.7
-  backCurveMagnitude: 0.7
+  curveChangeSpeed: 0.66
+  minSideCurve: 0.1
+  maxSideCurve: 3.99
+  backCurveMagnitude: 2.68
+  floorStretchMagnitude: 19.2
   previewCurveInEditMode: 1
-  chanceToCurve: 0.45
-  minCurveDuration: 4
-  maxCurveDuration: 7
+  chanceToCurve: 1
+  minCurveDuration: 5
+  maxCurveDuration: 10
 --- !u!4 &2024255069
 Transform:
   m_ObjectHideFlags: 0
@@ -657,7 +658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70b396c33abffa4e8b704c04ec7eec0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70b396c33abffa4e8b704c04ec7eec0, type: 3}
       propertyPath: m_LocalPosition.z
