@@ -15,7 +15,7 @@ public class SideScrollModule : ScrollingObjectModule
 
     public override void UpdateModule()
     {
-        scrollingObject.physicalObject.transform.position += new Vector3(speed,0,0) * Time.deltaTime; 
+        scrollingObject.physicalObject.transform.position += new Vector3(speed * GameManager.instance.speedMultiplier, 0,0) * Time.deltaTime; 
     }
 
     private void OnDrawGizmos()

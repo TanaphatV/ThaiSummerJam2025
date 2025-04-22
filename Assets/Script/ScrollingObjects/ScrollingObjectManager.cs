@@ -25,23 +25,18 @@ public class ScrollingObjectManager : MonoBehaviour
     private ScrollingObjectSet lastSpawnedSet;
     private ScrollingObjectSet upcomingSet;
 
-    public bool start;
+    private bool start;
 
-    private void Start()
-    {
-        Init();
-        StartSpawner();
-    }
     private void Update()
     {
-        if (!start)
-            return;
-
-        if (lastSpawnedSet.transform.position.z < (spawnPoint.position.z - upcomingSet.length))
+        if (start)
         {
-            SpawnObjectSet();
-        }
+            if (lastSpawnedSet.transform.position.z < (spawnPoint.position.z - upcomingSet.length))
+            {
+                SpawnObjectSet();
+            }
 
+        }
         CheckObjectSet();
     }
 
@@ -65,6 +60,11 @@ public class ScrollingObjectManager : MonoBehaviour
         SpawnObjectSet();
     }
 
+    public void StopSpawner()
+    {
+        start = false;
+    }
+
 
     void CheckObjectSet()
     {
@@ -86,7 +86,7 @@ public class ScrollingObjectManager : MonoBehaviour
     {
         ScrollingObjectSet set = Instantiate(upcomingSet);
         set.transform.position = spawnPoint.position;
-        set.Init(speed);
+        set.Init(speed * GameManager.instance.speedMultiplier);
         lastSpawnedSet = set;
         activeObstacleList.Add(set);
         PreInitNextSet();

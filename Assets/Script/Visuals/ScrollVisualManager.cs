@@ -103,7 +103,7 @@ public class ScrollVisualManager : MonoBehaviour
 
     private void ScrollTexture()
     {
-        _currentY += scrollSpeed * Time.deltaTime;
+        _currentY += scrollSpeed * GameManager.instance.speedMultiplier * Time.deltaTime;
         Shader.SetGlobalVector(shaderID_scrollOffset,new Vector2(0,_currentY));
     }
 }
