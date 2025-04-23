@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   deSpawnPoint: {fileID: 0}
-  speed: 2.86
+  speed: 40
   objectSetInfoList:
   - weight: 1
     objectSet: {fileID: 6201757538121389742, guid: 30e29fc2c9854404eb07f71fc708a29d, type: 3}
-  start: 0
