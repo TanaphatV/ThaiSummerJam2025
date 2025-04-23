@@ -66,11 +66,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930931795753501504, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -128.1
+      value: -130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930931795753501504, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3930931795753501504, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.63
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5165731127108258839, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
       propertyPath: m_Name
@@ -78,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5372215374686499110, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.45
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -100,7 +104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 370140150761594422, guid: 094197740e12178499c363f0a227a7d6, type: 3}
       propertyPath: length
-      value: 90
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3413561978495602329, guid: 094197740e12178499c363f0a227a7d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413561978495602329, guid: 094197740e12178499c363f0a227a7d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.3408027
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3413561978495602329, guid: 094197740e12178499c363f0a227a7d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -144,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6172591048963910257, guid: 094197740e12178499c363f0a227a7d6, type: 3}
       propertyPath: m_Name
-      value: TestSet02
+      value: TestSet02OneBoxOneBall
       objectReference: {fileID: 0}
     - target: {fileID: 6172591048963910257, guid: 094197740e12178499c363f0a227a7d6, type: 3}
       propertyPath: m_IsActive
