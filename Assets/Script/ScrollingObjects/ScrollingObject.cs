@@ -6,6 +6,7 @@ public class ScrollingObject : MonoBehaviour
 {
     private List<ScrollingObjectModule> moduleList = new();
 
+    public int health;
     public GameObject physicalObject;
 
     public virtual void Init()
@@ -20,9 +21,13 @@ public class ScrollingObject : MonoBehaviour
         UpdateModules();
     }
 
-    public virtual void OnHitByBullet()
+    public virtual void OnHitByBullet(bool oneShot)
     {
-
+        health -= 1;
+        if(health <= 0 || oneShot)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public virtual void OnHitPlayer(FPSController player)
