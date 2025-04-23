@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 78768127445461775}
   - component: {fileID: 8212020166696818052}
   m_Layer: 0
-  m_Name: RandomMovingObstacle
+  m_Name: RandomMovingObstacle(TumbleWeed)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
