@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : ScrollingObject
+public class BulletBuff : ScrollingObject
 {
-    public int scoreReward;
+    public float buffDuration;
 
     public override void OnHitPlayer(FPSController player)
     {
-        ScoreCounter.instance.AddScore(scoreReward);
+        base.OnHitPlayer(player);
     }
-
 }

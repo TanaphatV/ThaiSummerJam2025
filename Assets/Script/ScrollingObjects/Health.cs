@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : ScrollingObject
+public class Health : ScrollingObject
 {
-    public int scoreReward;
-
     public override void OnHitPlayer(FPSController player)
     {
-        ScoreCounter.instance.AddScore(scoreReward);
+        base.OnHitPlayer(player);
+        player.Health += 1;
     }
-
 }

@@ -43,9 +43,11 @@ public class ScrollingObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out FPSController player))
+        var player = other.GetComponentInParent<FPSController>();
+        if (player != null)
         {
             OnHitPlayer(player);
+            Destroy(gameObject);
         }
     }
 }
