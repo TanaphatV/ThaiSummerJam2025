@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68dc54a5e75b7f48b44493393f81551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 1
-  curveChangeSpeed: 1
+  scrollSpeed: 0.7
+  curveChangeSpeed: 2
   minSideCurve: 0.06
-  maxSideCurve: 0.7
-  backCurveMagnitude: 0.7
-  floorStretchMagnitude: 0
+  maxSideCurve: 3
+  backCurveMagnitude: -0.4
+  floorStretchMagnitude: 8
   previewCurveInEditMode: 1
-  chanceToCurve: 0.45
-  minCurveDuration: 4
-  maxCurveDuration: 7
+  chanceToCurve: 0.5
+  minCurveDuration: 7
+  maxCurveDuration: 10
