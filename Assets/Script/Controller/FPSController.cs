@@ -18,6 +18,8 @@ public class FPSController : MonoBehaviour
     [Header("hp")]
     [SerializeField] private Image fillBar;
 
+    [SerializeField] private float gizmosHeight = 0f;
+
     [field : SerializeField] public int Health { get; set; }
     [field: SerializeField] public int MaxHealth { get; set; }
 
@@ -93,5 +95,19 @@ public class FPSController : MonoBehaviour
         {
             Health -= 1;
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+
+        Vector3 bottomLeft = new Vector3(minX, transform.position.y - gizmosHeight, minZ);
+        Vector3 bottomRight = new Vector3(maxX, transform.position.y - gizmosHeight, minZ);
+        Vector3 topRight = new Vector3(maxX, transform.position.y - gizmosHeight, maxZ);
+        Vector3 topLeft = new Vector3(minX, transform.position.y - gizmosHeight, maxZ);
+
+        Gizmos.DrawLine(bottomLeft, bottomRight);
+        Gizmos.DrawLine(bottomRight, topRight);
+        Gizmos.DrawLine(topRight, topLeft);
+        Gizmos.DrawLine(topLeft, bottomLeft);
     }
 }

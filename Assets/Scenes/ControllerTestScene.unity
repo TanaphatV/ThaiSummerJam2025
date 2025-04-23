@@ -381,7 +381,6 @@ MonoBehaviour:
   objectSetInfoList:
   - weight: 1
     objectSet: {fileID: 6201757538121389742, guid: 30e29fc2c9854404eb07f71fc708a29d, type: 3}
-  start: 0
 --- !u!4 &1370151789
 Transform:
   m_ObjectHideFlags: 0
@@ -604,6 +603,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25590579520428087, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      propertyPath: gizmosHeight
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 313289114729100808, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
       propertyPath: mainCamera
       value: 
