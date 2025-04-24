@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3234446021615012474}
   - component: {fileID: 1288463608509202022}
   m_Layer: 0
-  m_Name: RandomSpotObstacleBase(Cactus)
+  m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
