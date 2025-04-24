@@ -10,6 +10,9 @@ public class AimController : MonoBehaviour
 
     public float clickCooldown = 0.5f; // Delay in seconds
     private float nextClickTime = 0f;
+    public bool isOneShot = false;
+
+    [SerializeField] private CrossHairGUIManager crossHairGUI;
 
     private void Start()
     {
@@ -27,7 +30,7 @@ public class AimController : MonoBehaviour
 
             if (Physics.Raycast(mouseRay, out hit, rayLength))
             {
-                Debug.Log("Mouse hit: " + hit.collider.name);
+                //Debug.Log("Mouse hit: " + hit.collider.name);
                 Debug.DrawLine(mainCamera.transform.position, hit.point, Color.green, 2f);
 
                 Vector3 targetPoint = hit.point;
@@ -40,14 +43,26 @@ public class AimController : MonoBehaviour
                 {
                     if (playerHit.collider == hit.collider)
                     {
-                        if (!hit.collider.CompareTag("Player"))
-                            Destroy(hit.collider.gameObject);
+                        Transform hitTransform = hit.collider.transform;
+                        Obstacle obstacle = hitTransform.GetComponentInParent<Obstacle>();
+
+                        if (obstacle != null)
+                        {
+                            obstacle.OnHitByBullet(isOneShot);
+                            crossHairGUI.Hit();
+                        }
                     }
                     else
                     {
-                        if (!playerHit.collider.CompareTag("Player"))
-                            Destroy(playerHit.collider.gameObject);
-                    }
+                        Transform hitTransform = playerHit.collider.transform;
+                        Obstacle obstacle = hitTransform.GetComponentInParent<Obstacle>();
+
+                        if (obstacle != null)
+                        {
+                            obstacle.OnHitByBullet(isOneShot);
+                            crossHairGUI.Hit();
+                        }
+                    }            
                 }
                 else
                 {
