@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
 
         yield return ShowMainMenu();
 
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
 
         while (player.transform.position.z < playerStartPoint.position.z)
         {
-            player.transform.position += new Vector3(0, 0, player.moveSpeed * Time.deltaTime);
+            player.transform.position += new Vector3(0, 0, player.moveSpeed * 0.6f * Time.deltaTime);
             yield return null;
         }
 
