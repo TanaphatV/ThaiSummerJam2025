@@ -23,6 +23,7 @@ public class MainMenuFunctions : MonoBehaviour
         Debug.Log("Play Game button clicked");
         RotateCanvasOut();
         // Load the game scene here
+        GameManager.instance.StartGame();
     }
 
     public void ThailandGameJamURL()

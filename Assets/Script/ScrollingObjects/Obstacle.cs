@@ -6,6 +6,7 @@ public class Obstacle : ScrollingObject
 {
     public override void OnHitPlayer(FPSController player)
     {
-        player.Health -= 1;
+        base.OnHitPlayer(player);
+        player.SetHealth(player.Health - 1);
     }
 }

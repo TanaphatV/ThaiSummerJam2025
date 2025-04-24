@@ -7,6 +7,6 @@ public class Health : ScrollingObject
     public override void OnHitPlayer(FPSController player)
     {
         base.OnHitPlayer(player);
-        player.Health += 1;
+        player.SetHealth(player.Health + 1);
     }
 }

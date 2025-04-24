@@ -20,7 +20,8 @@ public class FPSController : MonoBehaviour
 
     [SerializeField] private float gizmosHeight = 0f;
 
-    [field : SerializeField] public int Health { get; set; }
+    public int Health { get; private set; }
+
     [field: SerializeField] public int MaxHealth { get; set; }
 
     public Transform orientation;
@@ -34,20 +35,31 @@ public class FPSController : MonoBehaviour
 
     Rigidbody rb;
 
+    bool allowMovement = false;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        Health = MaxHealth;
     }
 
     private void Update()
     {
-        SpeedControl();
         fillBar.fillAmount = (float)Health / MaxHealth;
+
+        if (!allowMovement)
+            return;
+
+        SpeedControl();
     }
 
     private void FixedUpdate()
     {
+        if (!allowMovement)
+            return;
+
         MovePlayer();
         ClampPlayerPosition();
     }
@@ -60,6 +72,17 @@ public class FPSController : MonoBehaviour
         clampedPosition.z = Mathf.Clamp(clampedPosition.z, minZ, maxZ);
 
         rb.position = clampedPosition;
+    }
+
+    public void Restart()
+    {
+        allowMovement = true;
+        Health = MaxHealth;
+    }
+
+    public void OnEndGame()
+    {
+        allowMovement = false;
     }
 
     private void MovePlayer()
@@ -80,6 +103,15 @@ public class FPSController : MonoBehaviour
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    public void SetHealth(int health)
+    {
+        Health = health;
+        if(health <= 0)
+        {
+            GameManager.instance.EndGame();
         }
     }
 
