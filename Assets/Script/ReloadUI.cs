@@ -16,32 +16,30 @@ public class ReloadUI : MonoBehaviour
     public float timeBetweenShot;
     public float timeToReload;
 
-    private void Update()
+    public void Restart()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-            Reload();
+        StopAllCoroutines();
+        foreach (var bullet in bulletGraphic)
+            bullet.SetActive(true);
     }
 
-    void Reload()
+
+    public void Reload()
     {
         StartCoroutine(ReloadIE());
     }
 
-    void Shoot()
+    public void Shoot()
     {
         StartCoroutine(ShootIE());
     }
 
     IEnumerator ReloadIE()
     {
-        float reloadSpeed = angleBetweenBullet / timeToReload;
+        float reloadSpeed = angleBetweenBullet / (timeToReload * 0.3f);
         float targetRotation = cylinder.rotation.eulerAngles.z + angleBetweenBullet;
 
-        yield return new WaitForSeconds(timeToReload * 0.5f);
+        yield return new WaitForSeconds(timeToReload * 0.3f);
 
         bool needToRotate = currentBullet.activeSelf;
         if (needToRotate)
@@ -70,7 +68,9 @@ public class ReloadUI : MonoBehaviour
         currentBullet.SetActive(false);
         PreviousBullet();
 
-        float reloadSpeed = angleBetweenBullet / timeToReload;
+        yield return new WaitForSeconds(timeBetweenShot * 0.3f);
+
+        float reloadSpeed = angleBetweenBullet / (timeBetweenShot * 0.3f);
         float targetRotation = cylinder.rotation.eulerAngles.z - angleBetweenBullet;
 
         while (!AreAnglesClose(cylinder.rotation.eulerAngles.z, targetRotation))

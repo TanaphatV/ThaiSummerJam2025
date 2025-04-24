@@ -28,6 +28,8 @@ public class FPSController : MonoBehaviour
 
     [SerializeField] private Transform camPos;
 
+    public AimController aimController;
+
     float horizontalInput;
     float verticalInput;
 
@@ -78,6 +80,7 @@ public class FPSController : MonoBehaviour
     {
         allowMovement = true;
         Health = MaxHealth;
+        aimController.Restart();
     }
 
     public void OnEndGame()
