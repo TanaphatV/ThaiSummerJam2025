@@ -24,7 +24,7 @@ public class ScrollingObject : MonoBehaviour
     public virtual void OnHitByBullet(bool oneShot)
     {
         health -= 1;
-        if(health <= 0 || oneShot)
+        if (health <= 0 || oneShot)
         {
             Destroy(gameObject);
         }
@@ -46,6 +46,9 @@ public class ScrollingObject : MonoBehaviour
         var player = other.GetComponentInParent<FPSController>();
         if (player != null)
         {
+            if (!GameManager.instance.started)
+                return;
+
             OnHitPlayer(player);
             Destroy(gameObject);
         }

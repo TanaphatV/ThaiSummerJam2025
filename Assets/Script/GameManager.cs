@@ -22,9 +22,14 @@ public class GameManager : MonoBehaviour
     }
     private static GameManager _instance;
 
+    public MainMenuFunctions mainMenu;
     public ScoreCounter scoreCounter;
     public ScrollVisualManager scrollManager;
     public ScrollingObjectManager objectManager;
+    public FPSController player;
+
+    public Transform playerSpawnPoint;
+    public Transform playerStartPoint;
 
     public float scorePerMeter;
 
@@ -33,8 +38,8 @@ public class GameManager : MonoBehaviour
     public float speedMultiplier { get; private set; } = 1.0f;
 
     private float elapsedTime;
-    bool start;
-
+    public bool started { get; private set; } = false;
+    
     private void Awake()
     {
         _instance = this;
@@ -42,14 +47,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        start = false;
+        started = false;
         objectManager.Init();
-        Restart();
+        player.OnEndGame(); 
+        StartCoroutine(ShowMainMenu());
     }
 
     public void Update()
     {
-        if(start)
+        if(started)
         {
             scoreCounter.AddScore((int)(scorePerMeter * speedMultiplier * Time.deltaTime));
 
@@ -66,30 +72,65 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void EndGame()
+    bool ending = false;
+    public void EndGame()
     {
+        if (ending)
+            return;
+
+        ending = true;
+        started = false;
         scoreCounter.RegisterScore();
         objectManager.StopSpawner();
-        StartCoroutine(EndGameIE());   
+        player.OnEndGame();
+        StartCoroutine(EndGameIE());
     }
 
     IEnumerator EndGameIE()
     {
         float diff = 1.0f - speedMultiplier;
         float speedChangeDelta = diff / 2.0f;
-        while (!Mathf.Approximately(1.0f,speedMultiplier))
+
+        while(player.transform.position.z > playerSpawnPoint.position.z)
         {
-            speedMultiplier = Mathf.MoveTowards(speedMultiplier,1.0f, speedChangeDelta * Time.deltaTime);
+            player.transform.position -= new Vector3(0,0, objectManager.speed * speedMultiplier * Time.deltaTime);
             yield return null;
         }
+
+        while (!Mathf.Approximately(1.0f,speedMultiplier))
+        {
+            speedMultiplier = Mathf.MoveTowards(speedMultiplier,1.0f, Mathf.Abs(speedChangeDelta) * Time.deltaTime);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+        yield return ShowMainMenu();
+
+        ending = false;
     }
 
-    void Restart()
+    IEnumerator ShowMainMenu()
     {
+        
+        player.transform.position = new(playerSpawnPoint.position.x, player.transform.position.y ,playerSpawnPoint.position.z);
+
+        while (player.transform.position.z < playerStartPoint.position.z)
+        {
+            player.transform.position += new Vector3(0, 0, player.moveSpeed * 0.6f * Time.deltaTime);
+            yield return null;
+        }
+
+        mainMenu.RotateCanvasBackIn();
+    }
+
+    public void StartGame()
+    {
+        player.Restart();
         objectManager.StartSpawner();
         scoreCounter.Restart();
         elapsedTime = 0;
         milestoneCount = 0;
-        start = true;
+        started = true;
     }
 }

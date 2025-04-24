@@ -47,13 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50057aea2c3cd9b4ea9a3df7e3723a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
   scoreCounter: {fileID: 5660587355296769610}
   scrollManager: {fileID: 6849806779249378687}
   objectManager: {fileID: 7053390293604048932}
+  player: {fileID: 0}
+  playerSpawnPoint: {fileID: 0}
+  playerStartPoint: {fileID: 0}
   scorePerMeter: 2.21
   milestones:
-  - speedMultiplier: 1
-    timeElapsed: 1
+  - speedMultiplier: 2
+    timeElapsed: 0
 --- !u!1 &1468431789328668307
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,11 +253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: backCurveMagnitude
-      value: -0.2
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: previewCurveInEditMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7509265571352944106, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: m_LocalPosition.x

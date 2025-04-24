@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MainMenuFunctions : MonoBehaviour
 {
+    public Button playButton;
     public GameObject parentFromCanvas;
     public float rotationDuration = 1.0f; // Duration of the rotation in seconds
     private bool isRotating = false;
@@ -23,6 +24,7 @@ public class MainMenuFunctions : MonoBehaviour
         Debug.Log("Play Game button clicked");
         RotateCanvasOut();
         // Load the game scene here
+        GameManager.instance.StartGame();
     }
 
     public void ThailandGameJamURL()
@@ -49,6 +51,7 @@ public class MainMenuFunctions : MonoBehaviour
 
     private IEnumerator RotateCanvasCoroutine()
     {
+        playButton.enabled = false;
         isRotating = true;
         float elapsedTime = 0f;
         float startRotation = 0f;
@@ -65,11 +68,13 @@ public class MainMenuFunctions : MonoBehaviour
         // Ensure the final rotation is exactly 90 degrees
         parentFromCanvas.transform.rotation = Quaternion.Euler(0, endRotation, 0);
         isRotating = false;
+        playButton.enabled = true;
     }
 
 
     private IEnumerator RotateCanvasBackCoroutine()
     {
+        playButton.enabled = false;
         isRotating = true;
         float elapsedTime = 0f;
         float startRotation = 90f;
@@ -86,5 +91,6 @@ public class MainMenuFunctions : MonoBehaviour
         // Ensure the final rotation is exactly 0 degrees
         parentFromCanvas.transform.rotation = Quaternion.Euler(0, endRotation, 0);
         isRotating = false;
+        playButton.enabled = true;
     }
 }
