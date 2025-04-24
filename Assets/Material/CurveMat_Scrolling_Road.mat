@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CurveMat_Road
+  m_Name: CurveMat_Scrolling_Road
   m_Shader: {fileID: -6465566751694194690, guid: f3046a676e0f7464cb3eca169c3e65c9, type: 3}
   m_Parent: {fileID: 2100000, guid: 5f4b37a9bab0a0e489e1b42ff24076b7, type: 2}
   m_ModifiedSerializedProperties: 0
