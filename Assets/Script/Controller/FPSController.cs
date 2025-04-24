@@ -42,7 +42,6 @@ public class FPSController : MonoBehaviour
 
     private void Update()
     {
-        MyInput();
         SpeedControl();
         fillBar.fillAmount = (float)Health / MaxHealth;
     }
@@ -63,17 +62,13 @@ public class FPSController : MonoBehaviour
         rb.position = clampedPosition;
     }
 
-    private void MyInput()
+    private void MovePlayer()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-    }
-
-    private void MovePlayer()
-    {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
     }
 
     private void SpeedControl()
@@ -94,6 +89,10 @@ public class FPSController : MonoBehaviour
         if (other.gameObject.TryGetComponent<ScrollingObject>(out var scrollingObj))
         {
             Health -= 1;
+            if(Health <= 0)
+            {
+                Debug.Log("Dead");
+            }
         }
     }
     private void OnDrawGizmos()

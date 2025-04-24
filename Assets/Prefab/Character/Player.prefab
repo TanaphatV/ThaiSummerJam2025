@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2437717061853552383}
   - component: {fileID: 6473552383156434335}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603d224b86ef27041be6a73de7937978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 20
   minX: -14
   maxX: 14
   minZ: -8
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 6440930176613886843}
   rayLength: 100
   clickCooldown: 0.5
 --- !u!54 &4069802773745154884
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 2743174834834587875}
   - component: {fileID: 6389375874547647087}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: fillBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 6999060846821824905}
   - component: {fileID: 6276903338664053950}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 5723598201980409754}
   - component: {fileID: 7535241976526238216}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
