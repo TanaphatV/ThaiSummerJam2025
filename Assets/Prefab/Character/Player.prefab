@@ -117,7 +117,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6440930176613886843}
   - component: {fileID: 5348628007672902295}
-  - component: {fileID: 9087999475632280084}
   - component: {fileID: 8392475163424342880}
   m_Layer: 0
   m_Name: Capsule
@@ -150,48 +149,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689902256949373591}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &9087999475632280084
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689902256949373591}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &8392475163424342880
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -596,7 +553,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   player: {fileID: 6440930176613886843}
   rayLength: 100
-  clickCooldown: 0.5
+  clickCooldown: 0.1
+  isOneShot: 0
   crossHairGUI: {fileID: 985906446171752677}
 --- !u!1 &5735798868437478978
 GameObject:
@@ -811,7 +769,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a3c80196a17b8304fab9d2ca8f4aac56, type: 2}
+  - {fileID: 2100000, guid: 19e941c83c05bb741866ccd1659b89c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1145,7 +1103,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a70b396c33abffa4e8b704c04ec7eec0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 44f494655d7b6d34a92661f97d99ba85, type: 2}
+      objectReference: {fileID: 2100000, guid: 19e941c83c05bb741866ccd1659b89c8, type: 2}
     - target: {fileID: 919132149155446097, guid: a70b396c33abffa4e8b704c04ec7eec0, type: 3}
       propertyPath: m_Name
       value: Mesh_mocai_blocking

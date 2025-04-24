@@ -244,8 +244,16 @@ PrefabInstance:
       value: CurveManager
       objectReference: {fileID: 0}
     - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
+      propertyPath: scrollSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
+      propertyPath: backCurveMagnitude
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: previewCurveInEditMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7509265571352944106, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: m_LocalPosition.x
