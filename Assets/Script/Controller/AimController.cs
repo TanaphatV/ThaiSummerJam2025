@@ -31,6 +31,8 @@ public class AimController : MonoBehaviour
     public AudioSource reloadSound;
     public AudioSource noBulletShootSound;
 
+    bool allowShoot = false;
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -40,8 +42,14 @@ public class AimController : MonoBehaviour
 
     public void Restart()
     {
+        allowShoot = true;
         bulletCount = maxBullet;
         reloadUI.Restart();
+    }
+
+    public void End()
+    {
+        allowShoot = false;
     }
 
     IEnumerator ReloadIE()
@@ -68,6 +76,8 @@ public class AimController : MonoBehaviour
 
     void Update()
     {
+        if (!allowShoot)
+            return;
 
         if (Time.time >= nextClickTime)
         {

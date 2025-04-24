@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     public ScoreCounter scoreCounter;
     public ScrollVisualManager scrollManager;
     public ScrollingObjectManager objectManager;
+    public ScrollingObjectManager leftDecoManager;
+    public ScrollingObjectManager rightDecoManager;
+
     public FPSController player;
 
     public Transform playerSpawnPoint;
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour
     {
         started = false;
         objectManager.Init();
+        leftDecoManager.Init();
+        rightDecoManager.Init();
         player.OnEndGame();
         playerCanvas.SetActive(false);
         StartCoroutine(ShowMainMenu());
@@ -86,6 +91,8 @@ public class GameManager : MonoBehaviour
         scoreCounter.RegisterScore();
         mainMenu.UpdateScoreText(scoreCounter.score);
         objectManager.StopSpawner();
+        leftDecoManager.StopSpawner();
+        rightDecoManager.StopSpawner();
         player.OnEndGame();
         StartCoroutine(EndGameIE());
     }
@@ -146,5 +153,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         
         objectManager.StartSpawner();
+        leftDecoManager.StartSpawner();
+        rightDecoManager.StartSpawner();
     }
 }

@@ -86,6 +86,7 @@ public class FPSController : MonoBehaviour
     public void OnEndGame()
     {
         allowMovement = false;
+        aimController.End();
     }
 
     private void MovePlayer()
