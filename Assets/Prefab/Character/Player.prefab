@@ -1165,8 +1165,8 @@ MonoBehaviour:
   reloadUI: {fileID: 5624418946705741891}
   player: {fileID: 6440930176613886843}
   rayLength: 100
-  reloadSpeed: 0
-  clickCooldown: 0.1
+  reloadSpeed: 0.3
+  clickCooldown: 0.15
   isOneShot: 0
   crossHairGUI: {fileID: 985906446171752677}
   shootSound: {fileID: 0}

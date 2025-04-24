@@ -54,8 +54,8 @@ MonoBehaviour:
   scoreCounter: {fileID: 5660587355296769610}
   scrollManager: {fileID: 6849806779249378687}
   objectManager: {fileID: 7053390293604048932}
-  leftDecoManager: {fileID: 0}
-  rightDecoManager: {fileID: 0}
+  leftDecoManager: {fileID: 4355971687748595282}
+  rightDecoManager: {fileID: 8723878410707024254}
   player: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
   playerStartPoint: {fileID: 0}
@@ -309,6 +309,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5729136654068306639, guid: e119955ecfe1d7149a3c5097318d315b, type: 3}
   m_PrefabInstance: {fileID: 6860988784854172957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8723878410707024254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2748974522207583331, guid: e119955ecfe1d7149a3c5097318d315b, type: 3}
+  m_PrefabInstance: {fileID: 6860988784854172957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633369482dfe4ec46962695fd6b3e9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6895725518375936185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,6 +377,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f043afaf5783a44c88c016220819468, type: 3}
+--- !u!114 &4355971687748595282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7188040744593854187, guid: 7f043afaf5783a44c88c016220819468, type: 3}
+  m_PrefabInstance: {fileID: 6895725518375936185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633369482dfe4ec46962695fd6b3e9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6184620441131843838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 749469271858110535, guid: 7f043afaf5783a44c88c016220819468, type: 3}
@@ -397,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: previewCurveInEditMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7509265571352944106, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: m_LocalPosition.x
