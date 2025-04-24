@@ -56,8 +56,12 @@ MonoBehaviour:
   playerStartPoint: {fileID: 0}
   scorePerMeter: 2.21
   milestones:
-  - speedMultiplier: 2
+  - speedMultiplier: 1
     timeElapsed: 0
+  - speedMultiplier: 1.1
+    timeElapsed: 10
+  - speedMultiplier: 1.2
+    timeElapsed: 20
 --- !u!1 &1468431789328668307
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,11 +257,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: backCurveMagnitude
-      value: -0.4
+      value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
+      propertyPath: floorStretchMagnitude
+      value: 12.62
       objectReference: {fileID: 0}
     - target: {fileID: 4530234721701338683, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: previewCurveInEditMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7509265571352944106, guid: 23ffc7b678adef646b295c3bff35a4e0, type: 3}
       propertyPath: m_LocalPosition.x
