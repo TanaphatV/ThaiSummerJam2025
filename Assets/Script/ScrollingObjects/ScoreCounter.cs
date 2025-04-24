@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class ScoreCounter : MonoBehaviour
 {
     public static ScoreCounter instance
@@ -16,6 +16,7 @@ public class ScoreCounter : MonoBehaviour
     private static ScoreCounter _instance;
 
     public int score { get; private set; } = 0;
+    public TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class ScoreCounter : MonoBehaviour
     public void AddScore(int score)
     {
         this.score += score;
+        scoreText.text = "SCORE: " + this.score.ToString();
     }
 
     public void RegisterScore()

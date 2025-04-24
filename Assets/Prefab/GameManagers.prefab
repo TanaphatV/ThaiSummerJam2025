@@ -48,13 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 0}
+  playerCanvas: {fileID: 0}
   scoreCounter: {fileID: 5660587355296769610}
   scrollManager: {fileID: 6849806779249378687}
   objectManager: {fileID: 7053390293604048932}
   player: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
   playerStartPoint: {fileID: 0}
-  scorePerMeter: 2.21
+  scorePerMeter: 5.48
   milestones:
   - speedMultiplier: 1
     timeElapsed: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fa466cb850f804d9238e1f2c1f6f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
 --- !u!1001 &4797260805366384581
 PrefabInstance:
   m_ObjectHideFlags: 0

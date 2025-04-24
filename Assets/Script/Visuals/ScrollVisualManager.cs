@@ -32,6 +32,7 @@ public class ScrollVisualManager : MonoBehaviour
 
     const float curveMultiplier = 0.001f;
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
         if(!EditorApplication.isPlaying)
@@ -51,7 +52,7 @@ public class ScrollVisualManager : MonoBehaviour
             }
         }
     }
-
+#endif
     private void Start()
     {
         Shader.SetGlobalFloat(shaderID_backCurve, backCurveMagnitude * curveMultiplier);

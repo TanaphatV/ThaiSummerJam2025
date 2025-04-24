@@ -3755,6 +3755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 5650188362288985142}
+  lastScore: {fileID: 6403278810426951326}
+  highScore: {fileID: 2239243585720160266}
   parentFromCanvas: {fileID: 4448538653580098197}
   rotationDuration: 2
 --- !u!114 &2020843148043382443

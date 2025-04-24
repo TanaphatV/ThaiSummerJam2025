@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class MainMenuFunctions : MonoBehaviour
 {
     public Button playButton;
+    public TextMeshProUGUI lastScore;
+    public TextMeshProUGUI highScore;
+
     public GameObject parentFromCanvas;
     public float rotationDuration = 1.0f; // Duration of the rotation in seconds
     private bool isRotating = false;
@@ -16,6 +20,12 @@ public class MainMenuFunctions : MonoBehaviour
         {
             Debug.Log("Spacebar pressed");
         }
+    }
+
+    public void UpdateScoreText(int currentScore)
+    {
+        lastScore.text = "Last Run: " + currentScore.ToString() + " pts";
+        highScore.text = "HighScore: " + PlayerPrefs.GetInt(PlayerPrefKey.HIGH_SCORE,0) + " pts";
     }
 
 

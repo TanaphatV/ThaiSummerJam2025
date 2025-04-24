@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     public MainMenuFunctions mainMenu;
+    public GameObject playerCanvas;
     public ScoreCounter scoreCounter;
     public ScrollVisualManager scrollManager;
     public ScrollingObjectManager objectManager;
@@ -49,15 +50,17 @@ public class GameManager : MonoBehaviour
     {
         started = false;
         objectManager.Init();
-        player.OnEndGame(); 
+        player.OnEndGame();
+        playerCanvas.SetActive(false);
         StartCoroutine(ShowMainMenu());
+        mainMenu.UpdateScoreText(0);
     }
 
     public void Update()
     {
         if(started)
         {
-            scoreCounter.AddScore((int)(scorePerMeter * speedMultiplier * Time.deltaTime));
+            scoreCounter.AddScore((int)(scorePerMeter * speedMultiplier * Time.deltaTime * 100.0f));
 
             if(elapsedTime >= milestones[milestoneCount].timeElapsed)
             {
@@ -81,6 +84,7 @@ public class GameManager : MonoBehaviour
         ending = true;
         started = false;
         scoreCounter.RegisterScore();
+        mainMenu.UpdateScoreText(scoreCounter.score);
         objectManager.StopSpawner();
         player.OnEndGame();
         StartCoroutine(EndGameIE());
@@ -120,17 +124,27 @@ public class GameManager : MonoBehaviour
             player.transform.position += new Vector3(0, 0, player.moveSpeed * 0.6f * Time.deltaTime);
             yield return null;
         }
-
+        playerCanvas.SetActive(false);
         mainMenu.RotateCanvasBackIn();
     }
 
     public void StartGame()
     {
+        StartCoroutine(StartGameIE());
+    }
+
+    IEnumerator StartGameIE()
+    {
         player.Restart();
-        objectManager.StartSpawner();
+
         scoreCounter.Restart();
         elapsedTime = 0;
         milestoneCount = 0;
         started = true;
+        playerCanvas.SetActive(true);
+
+        yield return new WaitForSeconds(3.0f);
+        
+        objectManager.StartSpawner();
     }
 }
