@@ -1381,6 +1381,8 @@ MonoBehaviour:
   clickCooldown: 0.15
   isOneShot: 0
   crossHairGUI: {fileID: 600256955607668599}
+  firePoint: {fileID: 3624611831610845529}
+  trailPrefab: {fileID: 9084098215538385473, guid: 9e2a0a737bae40a4e929b04895ccdd7a, type: 3}
   shootSound: {fileID: 0}
   reloadSound: {fileID: 0}
   noBulletShootSound: {fileID: 0}
@@ -2936,6 +2938,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 888190395751806514}
   m_SourcePrefab: {fileID: 100100000, guid: 30a19221f22cbf1419b98e90d6d77a27, type: 3}
+--- !u!4 &3624611831610845529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6363971283387339425, guid: 30a19221f22cbf1419b98e90d6d77a27, type: 3}
+  m_PrefabInstance: {fileID: 7646104377438075896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7412083560696006313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 30a19221f22cbf1419b98e90d6d77a27, type: 3}

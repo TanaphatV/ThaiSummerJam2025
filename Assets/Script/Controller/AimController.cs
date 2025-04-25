@@ -27,6 +27,9 @@ public class AimController : MonoBehaviour
     public UnityAction onShoot;
     public UnityAction onReload;
 
+    public Transform firePoint;
+    public GameObject trailPrefab;
+
     bool isReloading = false;
     bool queShoot = false;
 
@@ -131,6 +134,9 @@ public class AimController : MonoBehaviour
 
             if (Physics.Raycast(playerRay, out playerHit, directionToTarget.magnitude))
             {
+                GameObject trail = Instantiate(trailPrefab);
+                trail.GetComponent<BulletTrail>().Initialize(firePoint.position, playerHit.point, 0.1f);
+
                 if (playerHit.collider == hit.collider)
                 {
                     Transform hitTransform = hit.collider.transform;
