@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1348568, g: 0.36543104, b: 0.55791855, a: 1}
+  m_IndirectSpecularColor: {r: 0.13491961, g: 0.36551628, b: 0.557979, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -287,6 +287,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 829767173}
+    - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
+      propertyPath: maxSideCurve
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
+      propertyPath: minSideCurve
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
       propertyPath: previewCurveInEditMode
       value: 1
@@ -619,6 +627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603d224b86ef27041be6a73de7937978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1452849504 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1181070084882113407, guid: 86d50618153c809459f2f138220a0db2, type: 3}
+  m_PrefabInstance: {fileID: 1505272858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1505272858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,6 +721,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25590579520428087, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 1452849504}
     - target: {fileID: 1146691324715908662, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
       propertyPath: shootSound
       value: 

@@ -30,6 +30,8 @@ public class FPSController : MonoBehaviour
 
     [SerializeField] private HealthGUIManager healthGUI;
 
+    public AudioSource hurtSound;
+
     public AimController aimController;
 
     float horizontalInput;
@@ -129,7 +131,7 @@ public class FPSController : MonoBehaviour
     public void SetHealth(int health)
     {
         Health = health;
-
+        hurtSound.Play();
         healthGUI.DecreaseHealth();
 
         if (health <= 0)

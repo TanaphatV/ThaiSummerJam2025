@@ -127,12 +127,16 @@ public class AimController : MonoBehaviour
             Debug.DrawLine(mainCamera.transform.position, hit.point, Color.green, 2f);
 
             Vector3 targetPoint = hit.point;
-            Vector3 directionToTarget = targetPoint - player.position;
+            targetPoint = new(targetPoint.x, 1.5f, targetPoint.z);
 
-            Ray playerRay = new Ray(player.position, directionToTarget.normalized);
+            Vector3 playerPos = new(player.position.x, 1.5f, player.position.z);
+
+            Vector3 directionToTarget = targetPoint - playerPos;
+
+            Ray playerRay = new Ray(playerPos, directionToTarget.normalized);
             RaycastHit playerHit;
 
-            if (Physics.Raycast(playerRay, out playerHit, directionToTarget.magnitude))
+            if (Physics.Raycast(playerRay, out playerHit, directionToTarget.magnitude * 10.0f))
             {
                 GameObject trail = Instantiate(trailPrefab);
                 trail.GetComponent<BulletTrail>().Initialize(firePoint.position, playerHit.point, 0.1f);
