@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3210767762321482317}
   - component: {fileID: 2040441387935077772}
   - component: {fileID: 7761917694424344821}
+  - component: {fileID: 339620162606901181}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1550952614271389350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.77, z: 0}
+  m_LocalPosition: {x: 0, y: 3.925619, z: -0.5247555}
   m_LocalScale: {x: 6.06, y: 6.06, z: 6.06}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -104,8 +105,21 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.74
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &339620162606901181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550952614271389350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dff1292cf41d0e449d07bbcc1d01388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 360
 --- !u!1 &5165731127108258839
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c3c02e8dd71d514aab12aa946a5ca43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.168
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c3c02e8dd71d514aab12aa946a5ca43, type: 3}
       propertyPath: m_LocalPosition.y
@@ -272,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c3c02e8dd71d514aab12aa946a5ca43, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c3c02e8dd71d514aab12aa946a5ca43, type: 3}
       propertyPath: m_LocalRotation.w
