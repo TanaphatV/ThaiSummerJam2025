@@ -63,7 +63,17 @@ public class FPSController : MonoBehaviour
             return;
 
         MovePlayer();
+
         ClampPlayerPosition();
+    }
+
+    private void MovePlayer()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+        rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
     }
 
     private void ClampPlayerPosition()
@@ -74,6 +84,11 @@ public class FPSController : MonoBehaviour
         clampedPosition.z = Mathf.Clamp(clampedPosition.z, minZ, maxZ);
 
         rb.position = clampedPosition;
+
+        Vector3 velocity = rb.velocity;
+        velocity.x = 0f; 
+        velocity.z = 0f; 
+        rb.velocity = velocity;
     }
 
     public void Restart()
@@ -89,14 +104,7 @@ public class FPSController : MonoBehaviour
         aimController.End();
     }
 
-    private void MovePlayer()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
-    }
 
     private void SpeedControl()
     {
