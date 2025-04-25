@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13438551, g: 0.36480454, b: 0.55759364, a: 1}
+  m_IndirectSpecularColor: {r: 0.13458137, g: 0.36508098, b: 0.55780745, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,9 +135,13 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2023259728}
+    - target: {fileID: 5644967439876669171, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2023259728}
     - target: {fileID: 8198380180685976025, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
       propertyPath: m_Name
-      value: GameCamara
+      value: GameCamera
       objectReference: {fileID: 0}
     - target: {fileID: 8228079992816038154, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,6 +188,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
+--- !u!114 &164786420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 67069512927000894, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
+  m_PrefabInstance: {fileID: 80755633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efc2b4b3b2c3b64cb9cf8e350c83da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &208459440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,7 +222,11 @@ PrefabInstance:
     - target: {fileID: 3507264255709762792, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
       propertyPath: playerCanvas
       value: 
-      objectReference: {fileID: 1055657754}
+      objectReference: {fileID: 1055657760}
+    - target: {fileID: 3507264255709762792, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
+      propertyPath: cameraManager
+      value: 
+      objectReference: {fileID: 164786420}
     - target: {fileID: 3507264255709762792, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
       propertyPath: playerSpawnPoint
       value: 
@@ -268,10 +287,6 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 829767173}
-    - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
-      propertyPath: floorStretchMagnitude
-      value: 12.82
-      objectReference: {fileID: 0}
     - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
       propertyPath: previewCurveInEditMode
       value: 1
@@ -425,6 +440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6729766932660139035, guid: 2fff843dada35aa45a103b8d23691f45, type: 3}
+      propertyPath: rotationDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7103882374877393322, guid: 2fff843dada35aa45a103b8d23691f45, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -540,6 +559,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8680897258150932709, guid: 94c4729fe9ad068478595066a12483ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -74
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -561,6 +584,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7038465204186441215, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
   m_PrefabInstance: {fileID: 1877397012}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1055657760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055657754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba5529b0c131454196b56f369042b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentFromCanvas: {fileID: 1877397013}
+  rotationDuration: 1
 --- !u!4 &1411300081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7237152700548709218, guid: 94c4729fe9ad068478595066a12483ac, type: 3}
@@ -678,6 +715,22 @@ PrefabInstance:
       propertyPath: noBulletShootSound
       value: 
       objectReference: {fileID: 1505272859}
+    - target: {fileID: 2182398302469466080, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182398302469466080, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182398302469466080, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182398302469466080, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3850143216999907419, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -725,8 +778,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7038465204186441215, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1055657760}
   m_SourcePrefab: {fileID: 100100000, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+--- !u!1 &1877397013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 781397182695457681, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+  m_PrefabInstance: {fileID: 1877397012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1997797903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5129343469801974076, guid: 94c4729fe9ad068478595066a12483ac, type: 3}

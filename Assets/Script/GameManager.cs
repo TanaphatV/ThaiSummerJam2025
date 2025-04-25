@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     public MainMenuFunctions mainMenu;
-    public GameObject playerCanvas;
+    public playerCanvas playerCanvas;
     public ScoreCounter scoreCounter;
     public ScrollVisualManager scrollManager;
     public ScrollingObjectManager objectManager;
     public ScrollingObjectManager leftDecoManager;
     public ScrollingObjectManager rightDecoManager;
-
+    public CameraManager cameraManager;
     public FPSController player;
 
     public Transform playerSpawnPoint;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         leftDecoManager.Init();
         rightDecoManager.Init();
         player.OnEndGame();
-        playerCanvas.SetActive(false);
+        //playerCanvas.SetActive(false);
         StartCoroutine(ShowMainMenu());
         mainMenu.UpdateScoreText(0);
 
@@ -103,6 +103,9 @@ public class GameManager : MonoBehaviour
         float diff = 1.0f - speedMultiplier;
         float speedChangeDelta = diff / 2.0f;
 
+        // Set camera to Main Menu View
+        cameraManager.SwitchToCam(0);
+
         while(player.transform.position.z > playerSpawnPoint.position.z)
         {
             player.transform.position -= new Vector3(0,0, objectManager.speed * speedMultiplier * Time.deltaTime);
@@ -115,7 +118,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.1f);
 
         yield return ShowMainMenu();
 
@@ -129,10 +132,13 @@ public class GameManager : MonoBehaviour
 
         while (player.transform.position.z < playerStartPoint.position.z)
         {
-            player.transform.position += new Vector3(0, 0, player.moveSpeed * 0.6f * Time.deltaTime);
+            player.transform.position += new Vector3(0, 0, player.moveSpeed * 1.5f * Time.deltaTime);
             yield return null;
         }
-        playerCanvas.SetActive(false);
+        // Hide player canvas
+        //playerCanvas.SetActive(false);
+        playerCanvas.RotateCanvasOut();
+
         mainMenu.RotateCanvasBackIn();
     }
 
@@ -144,12 +150,18 @@ public class GameManager : MonoBehaviour
     IEnumerator StartGameIE()
     {
         player.Restart();
-
         scoreCounter.Restart();
+
+        // Set camera to TPS
+        cameraManager.SwitchToCam(1);
+
         elapsedTime = 0;
         milestoneCount = 0;
         started = true;
-        playerCanvas.SetActive(true);
+
+        // Show player canvas
+        //playerCanvas.SetActive(true);
+        playerCanvas.RotateCanvasBackIn();
 
         yield return new WaitForSeconds(3.0f);
         

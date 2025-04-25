@@ -3758,7 +3758,7 @@ MonoBehaviour:
   lastScore: {fileID: 6403278810426951326}
   highScore: {fileID: 2239243585720160266}
   parentFromCanvas: {fileID: 4448538653580098197}
-  rotationDuration: 2
+  rotationDuration: 1
 --- !u!114 &2020843148043382443
 MonoBehaviour:
   m_ObjectHideFlags: 0
