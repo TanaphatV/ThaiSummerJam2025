@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13471869, g: 0.36532325, b: 0.55791825, a: 1}
+  m_IndirectSpecularColor: {r: 0.13438551, g: 0.36480454, b: 0.55759364, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5066734093473717757, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2023259728}
     - target: {fileID: 8198380180685976025, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
       propertyPath: m_Name
       value: GameCamara
@@ -264,6 +268,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 829767173}
+    - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
+      propertyPath: floorStretchMagnitude
+      value: 12.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849806779249378687, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
+      propertyPath: previewCurveInEditMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7053390293604048932, guid: 58763c46b7635784aa8bc0d6299e5332, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -573,6 +585,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3201730185447695271, guid: 86d50618153c809459f2f138220a0db2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b9509159bb8e434fbd57214e4dd869f, type: 3}
     - target: {fileID: 6916678412332836081, guid: 86d50618153c809459f2f138220a0db2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -715,6 +731,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5129343469801974076, guid: 94c4729fe9ad068478595066a12483ac, type: 3}
   m_PrefabInstance: {fileID: 990478617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2023259728 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 243728165017778779, guid: 7d6cad44c8809bd4ea9b41f528d0edf5, type: 3}
+  m_PrefabInstance: {fileID: 1877397012}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2034076732 stripped
 Transform:

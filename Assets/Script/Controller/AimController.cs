@@ -8,6 +8,9 @@ public class AimController : MonoBehaviour
     public Camera mainCamera;
     public ReloadUI reloadUI;
     public Transform player;
+
+    public Animator animator;
+    
     public float rayLength = 100f;
 
     public float reloadSpeed;
@@ -108,6 +111,7 @@ public class AimController : MonoBehaviour
     {
         reloadUI.Shoot();
         shootSound?.Play();
+        animator?.SetTrigger("Shoot");
         bulletCount--;
         nextClickTime = Time.time + clickCooldown;
 
