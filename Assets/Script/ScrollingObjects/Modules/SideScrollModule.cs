@@ -10,7 +10,7 @@ public class SideScrollModule : ScrollingObjectModule
     public override void Init(ScrollingObject scrollingObject)
     {
         base.Init(scrollingObject);
-        scrollingObject.physicalObject.transform.position = beginPointTF.position;
+        scrollingObject.physicalObject.transform.position = new Vector3(beginPointTF.position.x, scrollingObject.physicalObject.transform.position.y, beginPointTF.position.z + 30);
     }
 
     public override void UpdateModule()

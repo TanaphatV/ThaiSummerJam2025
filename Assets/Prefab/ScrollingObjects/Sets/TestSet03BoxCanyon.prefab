@@ -626,10 +626,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomMovingObstacle (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5372215374686499110, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1259,10 +1255,6 @@ PrefabInstance:
     - target: {fileID: 5165731127108258839, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
       propertyPath: m_Name
       value: RandomMovingObstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5372215374686499110, guid: afad3d27e43c5c340a4eebc7ff47010a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
