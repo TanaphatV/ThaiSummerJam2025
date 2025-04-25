@@ -20,13 +20,15 @@ public class FPSController : MonoBehaviour
 
     [SerializeField] private float gizmosHeight = 0f;
 
-    public int Health { get; private set; }
+    [field: SerializeField] public int Health { get; private set; }
 
     [field: SerializeField] public int MaxHealth { get; set; }
 
     public Transform orientation;
 
     [SerializeField] private Transform camPos;
+
+    [SerializeField] private HealthGUIManager healthGUI;
 
     public AimController aimController;
 
@@ -49,7 +51,7 @@ public class FPSController : MonoBehaviour
 
     private void Update()
     {
-        fillBar.fillAmount = (float)Health / MaxHealth;
+        //fillBar.fillAmount = (float)Health / MaxHealth;
 
         if (!allowMovement)
             return;
@@ -96,10 +98,16 @@ public class FPSController : MonoBehaviour
         allowMovement = true;
         Health = MaxHealth;
         aimController.Restart();
+        healthGUI.Init(Health);
     }
 
     public void OnEndGame()
     {
+        for (int i = 0; i < Health; i++)
+        {
+            healthGUI.DecreaseHealth();
+        }
+
         allowMovement = false;
         aimController.End();
     }
@@ -121,24 +129,27 @@ public class FPSController : MonoBehaviour
     public void SetHealth(int health)
     {
         Health = health;
-        if(health <= 0)
+
+        healthGUI.DecreaseHealth();
+
+        if (health <= 0)
         {
             GameManager.instance.EndGame();
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Health -= 1;
-        if (other.gameObject.TryGetComponent<ScrollingObject>(out var scrollingObj))
-        {
-            Health -= 1;
-            if(Health <= 0)
-            {
-                Debug.Log("Dead");
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Health -= 1;
+    //    if (other.gameObject.TryGetComponent<ScrollingObject>(out var scrollingObj))
+    //    {
+    //        Health -= 1;
+    //        if(Health <= 0)
+    //        {
+    //            Debug.Log("Dead");
+    //        }
+    //    }
+    //}
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
