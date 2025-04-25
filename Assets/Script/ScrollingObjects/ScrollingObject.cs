@@ -9,6 +9,7 @@ public class ScrollingObject : MonoBehaviour
     public int health;
     public GameObject physicalObject;
 
+
     public virtual void Init()
     {
         moduleList = new(GetComponents<ScrollingObjectModule>());

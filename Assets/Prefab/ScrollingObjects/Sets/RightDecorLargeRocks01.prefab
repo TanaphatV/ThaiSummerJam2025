@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 4423254248580463159, guid: 6e9bbcc7d9890504a9229dac5269ab20, type: 3}
       propertyPath: physicalObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1659957139306763413}
     - target: {fileID: 5570163664687609190, guid: 6e9bbcc7d9890504a9229dac5269ab20, type: 3}
       propertyPath: m_Name
       value: RandomSpotObstacleBase

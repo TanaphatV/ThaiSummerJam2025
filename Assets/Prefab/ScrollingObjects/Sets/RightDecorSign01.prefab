@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 4423254248580463159, guid: 6e9bbcc7d9890504a9229dac5269ab20, type: 3}
       propertyPath: physicalObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7021871833303405704}
     - target: {fileID: 5570163664687609190, guid: 6e9bbcc7d9890504a9229dac5269ab20, type: 3}
       propertyPath: m_Name
       value: RandomSpotObstacleBase
@@ -150,6 +150,11 @@ PrefabInstance:
 --- !u!4 &3630930573804553142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5109224319945520463, guid: 66c7e77c3ccafbb418e9e5b5fb29c66a, type: 3}
+  m_PrefabInstance: {fileID: 8395893245726062329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7021871833303405704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1582601126426223217, guid: 66c7e77c3ccafbb418e9e5b5fb29c66a, type: 3}
   m_PrefabInstance: {fileID: 8395893245726062329}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9030161296579121975

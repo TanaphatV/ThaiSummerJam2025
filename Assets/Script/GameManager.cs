@@ -59,6 +59,9 @@ public class GameManager : MonoBehaviour
         playerCanvas.SetActive(false);
         StartCoroutine(ShowMainMenu());
         mainMenu.UpdateScoreText(0);
+
+        leftDecoManager.StartSpawner();
+        rightDecoManager.StartSpawner();
     }
 
     public void Update()
@@ -91,8 +94,6 @@ public class GameManager : MonoBehaviour
         scoreCounter.RegisterScore();
         mainMenu.UpdateScoreText(scoreCounter.score);
         objectManager.StopSpawner();
-        leftDecoManager.StopSpawner();
-        rightDecoManager.StopSpawner();
         player.OnEndGame();
         StartCoroutine(EndGameIE());
     }
@@ -153,7 +154,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         
         objectManager.StartSpawner();
-        leftDecoManager.StartSpawner();
-        rightDecoManager.StartSpawner();
     }
 }

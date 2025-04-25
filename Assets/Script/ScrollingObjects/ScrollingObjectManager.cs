@@ -55,9 +55,9 @@ public class ScrollingObjectManager : MonoBehaviour
 
     public void StartSpawner()
     {
-        start = true;
         PreInitNextSet();
         SpawnObjectSet();
+        start = true;
     }
 
     public void StopSpawner()
