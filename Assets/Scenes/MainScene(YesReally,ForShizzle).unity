@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13491961, g: 0.36551628, b: 0.557979, a: 1}
+  m_IndirectSpecularColor: {r: 0.13435648, g: 0.36479676, b: 0.5575872, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1496037330294256342, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7500001
+      objectReference: {fileID: 0}
     - target: {fileID: 5066734093473717757, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
       propertyPath: m_Follow
       value: 
@@ -139,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2023259728}
+    - target: {fileID: 6265054166861817359, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7899337
+      objectReference: {fileID: 0}
     - target: {fileID: 8198380180685976025, guid: 31066f868bab1194f909fbe8cc7b0b25, type: 3}
       propertyPath: m_Name
       value: GameCamera
@@ -640,6 +648,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1181070084882113407, guid: 86d50618153c809459f2f138220a0db2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 333e37f8c8fca174386b65c2d5bdb590, type: 3}
     - target: {fileID: 3201730185447695271, guid: 86d50618153c809459f2f138220a0db2, type: 3}
       propertyPath: m_audioClip
       value: 
