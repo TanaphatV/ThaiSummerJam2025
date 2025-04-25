@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         if(started)
         {
-            scoreCounter.AddScore((int)(scorePerMeter * speedMultiplier * Time.deltaTime * 10.0f));
+            scoreCounter.AddScore(Mathf.CeilToInt(scorePerMeter * speedMultiplier * Time.deltaTime * 10.0f));
 
             if(elapsedTime >= milestones[milestoneCount].timeElapsed)
             {
